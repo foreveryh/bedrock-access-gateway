@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  bedrock-gateway:
+    build:
+      context: ./src  # 指定 Docker 构建上下文
+      dockerfile: Dockerfile_ecs  # 指定 Dockerfile 文件
+    ports:
+      - "8000:8081"  # 映射端口
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}
+      API_KEY_PARAM_NAME: "123456"
+      AWS_REGION: "ap-southeast-2"
+      DEBUG: "true"
+    restart: always  # 失败时自动重启
