@@ -12,6 +12,6 @@ services:
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}
       API_KEY_PARAM_NAME: "123456"
-      AWS_REGION: "ap-southeast-2"
+      AWS_REGION: ${AWS_REGION}
       DEBUG: "true"
     restart: always  # 失败时自动重启
