@@ -14,3 +14,9 @@ services:
       AWS_REGION: ${AWS_REGION}
       DEBUG: "true"
     restart: always  # 失败时自动重启
+    networks:
+      - dokploy-network  # 加入 OpenWebUI 的网络
+
+networks:
+  dokploy-network:
+    external: true  # 指定为 OpenWebUI 已经在用的网络
