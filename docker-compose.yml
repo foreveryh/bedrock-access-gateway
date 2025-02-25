@@ -6,7 +6,7 @@ services:
       context: ./src  # 指定 Docker 构建上下文
       dockerfile: Dockerfile_ecs  # 指定 Dockerfile 文件
     ports:
-      - "8000:8081"  # 映射端口
+      - 80  # 映射端口
     environment:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
